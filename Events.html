@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+        <label>Texto Ingresar</label><br>
+        <input type="text" id="texto"/><br><br>
+        <button type="button" onclick="textoFuncion(); alertaConsola()">Boton</button><br><br>
+    <script>
+        function textoFuncion(){
+            const textoEscrito = document.getElementById('texto');
+            alert(textoEscrito.value);
+        }
+        function alertaConsola(){
+            console.log("Se toco el boton")
+        }
+    </script>
+</body>
+</html>
