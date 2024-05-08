@@ -9,8 +9,10 @@
     <label>Elementos de Entrada</label> <br><br>
     <label>Texto</label><br>
     <input type="text" id="texto" /><br><br>
+    <label>Texto 2</label><br>
+    <input type="text" id="texto2" placeholder="Ingrese un número"/><br><br>
     <label>Numero</label><br>
-    <input type="number"/><br><br>
+    <input type="number" disabled/><br><br>
     <label>Fecha</label><br>
     <input type="date" /><br><br>
     <label>Checkboxs</label><br>
@@ -37,15 +39,12 @@
     <button type="button">Boton</button><br><br>
     <button type="submit">Boton Submit</button><br><br>
     <script>
-        debugger;
         const inputTexto = document.getElementById('texto');
         inputTexto.value = "Texto de Ejemplo"
         inputTexto.style = "height: 100px"
         inputTexto.style.backgroundColor = "black"
-        
         const menuSelect = document.getElementById('menu');
         menuSelect.value = "1"
-
     </script>
 </body>
 </html>
