@@ -8,7 +8,7 @@
 
     <label>Elementos de Entrada</label> <br><br>
     <label>Texto</label><br>
-    <input type="text" /><br><br>
+    <input type="text" id="texto" /><br><br>
     <label>Numero</label><br>
     <input type="number"/><br><br>
     <label>Fecha</label><br>
@@ -25,17 +25,27 @@
     <input type="color" /><br><br>
 
     <label>Selectores</label><br>
-    <select>
+    <select id="menu">
         <option value="1">Opcion 1</option>
-        <option value="2">Opcion 2</option>
+        <option value="2" selected>Opcion 2</option>
     </select><br><br>
 
     <label>Áreas de Texto</label><br>
-    <textarea></textarea><br><br>
+    <textarea id="area"></textarea><br><br>
 
     <label>Botones</label><br>
     <button type="button">Boton</button><br><br>
     <button type="submit">Boton Submit</button><br><br>
+    <script>
+        debugger;
+        const inputTexto = document.getElementById('texto');
+        inputTexto.value = "Texto de Ejemplo"
+        inputTexto.style = "height: 100px"
+        inputTexto.style.backgroundColor = "black"
+        
+        const menuSelect = document.getElementById('menu');
+        menuSelect.value = "1"
 
+    </script>
 </body>
 </html>
