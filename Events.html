@@ -5,13 +5,54 @@
     <title>Document</title>
 </head>
 <body> 
-        <label>Texto Ingresar</label><br>
-        <input type="text" id="texto"/><br><br>
-        <button type="button" onclick="textoFuncion(); alertaConsola()">Boton</button><br><br>
+        <label>Numero 1</label><br>
+        <input type="number" id="numero1"/><br><br>
+        
+        <label>Numero 2</label><br>
+        <input type="number" id="numero2"/><br><br>
+
+        <select id="operacionSelect" onchange="operacion()">
+            <option value="0" selected>Seleccione una Operación</option>   
+            <option value="1">Suma</option>
+            <option value="2">Resta</option>
+        </select>
+
+        <button type="button" onclick="operacion();">Boton</button><br><br>
+        
+        <div id="resultadoDiv">
+            0
+        </div>
+    
     <script>
-        function textoFuncion(){
-            const textoEscrito = document.getElementById('texto');
-            alert(textoEscrito.value);
+
+        // TAREA : AGREGAR LAS DOS OPERACIONES FALTANTES
+        // QUE EL COLOR DEL RESULTADO SEA DIFERENTE DEPENDIENDO DE LA 
+        // OPERACIÓN SELECCIONADA
+        
+        function operacion(){
+            const selectValor = document.getElementById('operacionSelect').value
+            const numero1 = +document.getElementById('numero1').value
+            const numero2 = +document.getElementById('numero2').value
+
+            // if(numero1 === 0 || numero2 === 0){
+            //     alert("cargar valores");
+            //     return;
+            // } 
+            
+            let resultado = 0
+
+            switch(selectValor){
+                case "1":
+                    resultado = numero1 + numero2
+                break;
+                case "2":
+                    resultado = numero1 - numero2
+                break;
+            }
+        
+            const resultadoDiv = document.getElementById('resultadoDiv')
+            resultadoDiv.innerText = resultado
+
         }
         function alertaConsola(){
             console.log("Se toco el boton")
