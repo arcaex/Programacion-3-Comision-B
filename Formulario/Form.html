@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background: #b4b4b4;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        #formulario {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            width: 200px;
+            margin: auto;
+
+        }
+
+        #listadoDiv {
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            margin: auto;
+            margin-top: 20px;
+            background-color: white;
+        }
+
+        #filtro {
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            margin: auto;
+            margin-top: 20px;
+            background-color: white;
+        }
+    </style>
+
+    <script>
+        let listadoPersonas = [];
+
+        function guardarPersona(){
+            const nombre = document.getElementById('nombre').value;
+            let esAlumno = document.getElementById('esAlumno').value;
+
+            esAlumno === "1" ? esAlumno = true : esAlumno = false;
+
+            const objetoPersona = {
+                "nombre": nombre ,
+                "esAlumno": esAlumno
+            }
+
+            listadoPersonas.push(objetoPersona);
+
+            console.log(listadoPersonas)
+
+            const listaUL = document.getElementById('lista');
+            const elementoLI = document.createElement('li'); // <li></li>
+            elementoLI.innerHTML = `${nombre} - ${esAlumno}`; // <li>Nombre True</li>
+            listaUL.appendChild(elementoLI);
+        }
+
+    </script>
+
+    <div id="formulario">
+        <label>Nombre</label><br><br>
+        <input type="text" id="nombre" placeholder="Ingrese el nombre" /><br><br>
+
+        <label>¿Es Alumno?</label><br><br>
+        <select id="esAlumno">
+            <option value="1">Si</option>
+            <option value="0" selected>No</option>
+        </select><br><br>
+        <button onclick="guardarPersona()">Guardar</button>
+    </div>
+
+    <div id="listadoDiv">
+        <label><b>Listado</b></label>
+        <br><br>
+        <ul id="lista">
+        </ul>
+    </div>
+
+    <div id="filtro">
+        <button>Filtrar</button>
+        <br><br>
+        <div id="mensaje">
+            Mensaje
+        </div>
+    </div>
+
+</body>
+
+</html>
