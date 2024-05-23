@@ -78,6 +78,25 @@
 
         function filtrarNombre(){
 
+            const filtradoAlumnos = listadoPersonas.filter(
+                element => element.esAlumno === true
+            )
+
+            console.log("Filtrado >",filtradoAlumnos)
+       
+            let mayorNombre = ""
+
+            filtradoAlumnos.forEach((element) => {
+
+                if (element.nombre.length > mayorNombre.length ){
+                    mayorNombre = element.nombre
+                }
+
+            })
+
+            const divMensaje = document.getElementById('mensaje');
+            divMensaje.innerHTML = mayorNombre;
+
         }
 
     </script>
